@@ -19,6 +19,15 @@ var params = function() {
     return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
 }();
 
+var games = {
+    "phishing": [
+        "PasswordCreationTutorial" // put URL here
+    ],
+    "ransomware": [
+        // empty
+    ]
+}
+
 const category = params["category"];
 const answer = params["answer"];
 
@@ -26,9 +35,6 @@ const answer = params["answer"];
 
 var message = ""
 switch (category) {
-    case "password":
-        message = "Change password";
-        break;
     case "phishing":
         message = "Don't give away your data";
         break;

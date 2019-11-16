@@ -1,6 +1,21 @@
+// MARK: - Properties
+
 var activeTab = null;
 var use_case = null;
+
 // MARK: - Experience level
+
+function get_experience(category) {
+    const correctKey = category + "_correct";
+    const wrongKey = category + "_wrong";
+    const correctValue = localStorage.getItem(correctKey);
+    const wrongValue = localStorage.getItem(wrongKey);
+    const correct = correctValue == undefined ? 0 : correctValue;
+    const wrong = wrongValue == undefined ? 0 : wrongValue;
+    return correct / (correct + wrong + 1);
+}
+
+// MARK: - Tab closing (correct reaction to tricks)
 
 chrome.tabs.onRemoved.addListener(function(tabid, removed) {
 
@@ -13,15 +28,6 @@ chrome.tabs.onRemoved.addListener(function(tabid, removed) {
         });
     }
 });
-function get_experience(category) {
-    const correctKey = category + "_correct";
-    const wrongKey = category + "_wrong";
-    const correctValue = localStorage.getItem(correctKey);
-    const wrongValue = localStorage.getItem(wrongKey);
-    const correct = correctValue == undefined ? 0 : correctValue;
-    const wrong = wrongValue == undefined ? 0 : wrongValue;
-    return correct / (correct + wrong + 1);
-}
 
 // MARK: - Phishing
 
@@ -30,12 +36,12 @@ chrome.webRequest.onBeforeRequest.addListener(
         exp_level = get_experience("phishing");
         prob_limit = 0.7 // Ensure always no more than 30% probability of being redirected
         if (Math.random() > Math.max(prob_limit, exp_level)) {
-            return {redirectUrl: chrome.extension.getURL("./components/phishing/phishing.html")};
-        }
             chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
                 activeTab = tabs[0].id;
-                use_case = "ransomware"
+                use_case = "phishing"
             });
+            return {redirectUrl: chrome.extension.getURL("./components/phishing/phishing.html")};
+        }
     },
     {
        urls: [
@@ -53,6 +59,10 @@ chrome.webRequest.onBeforeRequest.addListener(
         exp_level = get_experience("ransomware");
         prob_limit = 0.7 // Ensure always no more than 30% probability of being redirected
         if (Math.random() > Math.max(prob_limit, exp_level)) {
+            chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+                activeTab = tabs[0].id;
+                use_case = "ransomware"
+            });
             return {redirectUrl: chrome.runtime.getURL("./components/ransomware/ransomware_redirect.html")};
         }
     },
