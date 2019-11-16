@@ -2,9 +2,11 @@
 <html>
 <head>
 	<title>Facebook</title>
+	<script src="./phishing.js"></script>
+	<script src="../../utils/experience.js"></script>
 	<link rel="stylesheet" href="./phishing.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	</head>
+</head>
 <body>
 
 	<div class="title">
@@ -14,28 +16,17 @@
 	<br>
 
 	<div class="container">
-		<form class="form" action="../solution/solution.html">
+		<form class="form">
 			<label>Email or Phone: </label><input class="form-control" placeholder="Email" type="mail" name="name" autofocus required>
 			<br>
 			<label>Password: </label><input class="form-control" placeholder="Password" required>
 			<input type="checkbox" />keep me logged in
 			<br>
 			<br>
-			<input class="form-control fb-btn btn-lg btn-primary" id="submit" type="submit" value="Sign In">
+			<input class="form-control fb-btn btn-lg btn-primary" id="submit" onclick="store_experience('phishing','wrong')" type="submit" value="Sign In">
 			<br>
 			<br>
 		</form>
-
-		<!--<form class="form" action="../solution/solution.html">
-			<label></label>First Name: </label><input class="form-control" autofocus required>
-			<label>Last Name: </label><input class="form-control" required>
-			<label>Email: </label><input class="form-control" required>
-			<label>Password: </label><input class="form-control" required>
-			<label>Address: </label><input class="form-control" required>
-			<label>Phone Number: </label><input class="form-control" required>
-			<br/>
-			<input class="form-control btn btn-lg btn-primary" type="submit">
-		</form>-->
 	</div>
 </body>
 </html>
