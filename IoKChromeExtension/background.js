@@ -29,6 +29,20 @@ chrome.tabs.onRemoved.addListener(function(tabid, removed) {
     }
 });
 
+chrome.webRequest.onBeforeRequest.addListener(
+    function(details) {
+        activeTab = null;
+        use_case = null;
+    },
+    {
+       urls: [
+            "*://*/components/solution/*"
+       ],
+       types: ["main_frame", "sub_frame"]
+    },
+   ["blocking"]
+)
+
 // MARK: - Phishing
 
 chrome.webRequest.onBeforeRequest.addListener(
