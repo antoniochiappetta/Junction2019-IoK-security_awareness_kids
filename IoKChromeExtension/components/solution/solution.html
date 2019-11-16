@@ -5,16 +5,57 @@
 		<script src="./solution.js"></script>
 		<link rel="stylesheet" href="./solution.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<div class="title">
-			IoKid comes to help!
+
+		<div class="container-fluid">
+
+		<!-- Or let Bootstrap automatically handle the layout -->
+		<div class="row row1">
+			<div class="col-md-6" style="background-color:yellow;">
+				<div class="card description">
+					">
+					<p class="card-block">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam velit quisquam veniam excepturi temporibus inventore corporis dicta sit culpa veritatis placeat earum, dolorum asperiores, delectus dolore voluptatibus, at magnam nobis!
+					</p>
+				</div>
+
+			</div>
+
+
+
+			<div class="col-md-6" style="background-color:orange;">
+
+				<br>
+				<div class="container">
+					<video id="reactionVideo" width="672" height="378" autoplay loop>
+						<source id="reactionVideoSource" src="" type="video/webm">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+
+			</div>
 		</div>
-		<div class="container">
-			<video id="reactionVideo" width="960" height="540" autoplay loop>
-				<source id="reactionVideoSource" src="" type="video/webm">
-				Your browser does not support the video tag.
-			</video>
+
+			<div class="row row2">
+				<div class="col-md-6" style="background-color:yellow;">
+
+					<button > Find out more</button>
+				</div>
+
+
+
+				<div class="col-md-6" style="background-color:orange;">
+
+					<div class="flex-rectangle" id="result_rect">Correct!</div>
+				</div>
+			</div>
+
 		</div>
+		<br>
+
+
 	</body>
 </html>

@@ -46,8 +46,13 @@ switch (category) {
 // Depending on the answer use a different reactionVideo
 
 const reactionVideoURL = answer == "correct" ? "../../assets/animations/success.webm" : "../../assets/animations/failure.webm";
+const rect_color = answer == "correct" ? "#A5FD4D" : "#FD4F42";
 window.onload = function() {
     console.log(reactionVideoURL);
     document.getElementById("reactionVideoSource").src = reactionVideoURL;
     document.getElementById("reactionVideo").load();
-} 
+
+    document.getElementById("result_rect").style.background = rect_color;
+};
+
+// Depending on the answer show a different reaction color
