@@ -86,6 +86,31 @@ chrome.webRequest.onBeforeRequest.addListener(
    ["blocking"]
 );
 
+// MARK: - FB fake request
+
+chrome.webRequest.onBeforeRequest.addListener(
+    function(details) {
+        exp_level = get_experience("fb_fake_request");
+        prob_limit = 0.7 // Ensure always no more than 30% probability of being redirected
+        if (Math.random() > Math.max(prob_limit, exp_level)) {
+            chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+                activeTab = tabs[0].id;
+                use_case = "fb_fake_request"
+            });
+            // return {redirectUrl: chrome.extension.getURL("./components/phishing/phishing.html")};
+            body = document.getElementsByTagName('body');
+            
+        }
+    },
+    {
+       urls: [
+           "*://www.facebook.com/*"
+       ],
+       types: ["main_frame", "sub_frame"]
+    },
+   ["blocking"]
+);
+
 // MARK: - Ransomware
 
 chrome.webRequest.onBeforeRequest.addListener(
@@ -104,7 +129,7 @@ chrome.webRequest.onBeforeRequest.addListener(
     {
         urls: [
             // Social networks
-            "*://www.facebook.com/*",
+            // "*://www.facebook.com/*",
             "*://www.twitter.com/*",
             // Seach engines
             "*://www.google.com/*",

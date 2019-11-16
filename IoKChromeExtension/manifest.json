@@ -12,16 +12,18 @@
   ],
   "content_scripts": [
     {
-      "matches": [
-        "*://www.ciao.com/*"
-      ],
-      "js": ["jquery-3.4.1.min.js", "content.js"]
+      "matches": ["*://www.facebook.com/*"],
+      "js": ["jquery-3.4.1.min.js", "./components/fb_fake_request/fb_fake_request.js"],
+      "css": ["./components/fb_fake_request/fb_fake_request.css"]
     }
   ],
   "browser_action": {
     "default_icon": "icon.png"
   },
   "web_accessible_resources": [
-    "*.html"
+    "*.html",
+    "*.css",
+    "*.js",
+    "components/fb_fake_request/pics/*"
   ]
 }

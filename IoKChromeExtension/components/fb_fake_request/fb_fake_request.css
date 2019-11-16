@@ -9,7 +9,7 @@
 }
 
 /* Modal button */
-.modal-btn {
+.fake_modal-btn {
     border: none;
     outline: none;
     cursor: pointer;
@@ -18,12 +18,12 @@
     color: #fff;
     border-radius: 3px;
 }
-.modal-btn:hover {
+.fake_modal-btn:hover {
     background-color: #5e77a8;
 }
 
 /* Modal */
-.modal {
+.fake_modal {
     background-color: rgba(0,0,0,.7);
     display: none;
     overflow: auto;
@@ -36,23 +36,30 @@
 }
 
 /* Modal Content */
-.modal-content {
+.fake_modal-content {
     position: relative;
-    top: 0px;
+    top: 80px;
     width: 600px;
     margin: 0 auto;
     background-color: white;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 4px;
 }
-.modal-header {
+.fake_modal-header {
     background-color: #4267b2;
     height: 60px;
     line-height: 60px;
     padding-left: 20px;
     border-radius: 3.8px 3.8px 0 0;
+    color: white !important;
 }
-.modal-content .close {
+
+.fake_modal-header > h3 {
+    color: #fff;
+    font-size: 20px;
+}
+
+.fake_modal-content .close {
     position: absolute;
     right: 0;
     top: 0;
@@ -62,19 +69,19 @@
     text-align: center;
     cursor: pointer;
 }
-.modal-content .close:hover {
+.fake_modal-content .close:hover {
     background-color: rgba(255, 255, 255, .1);
     color: white;
 }
 
 /* Modal Body */
-.modal-body {
+.fake_modal-body {
     padding: 20px 20px;
     position: relative;
 }
 
 /* Modal Footer */
-.modal-footer {
+.fake_modal-footer {
     border-top: 1px solid #888;
     color: #444;
     width: 100%;
@@ -82,9 +89,6 @@
     padding-left: 20px;
 }
 
-.modal-header {
-    color: #fff;
-}
 
 .fake_name_container {
     display: inline-block;
@@ -126,10 +130,13 @@
 }
 
 #modBtn {
-    height: 36px;
+    height: 43px;
     width: 36px;
-    background-image: url(./pics/icon.png);
+    background-image: url(chrome-extension://__MSG_@@extension_id__/components/fb_fake_request/pics/icon.png);
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
+    background-size: 60%;
+    padding:  0;
+    margin: 0;
 }
