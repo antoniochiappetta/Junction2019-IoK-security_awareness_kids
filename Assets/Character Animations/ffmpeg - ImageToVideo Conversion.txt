@@ -1,0 +1,9 @@
+# Commands for conversion from Image Sequence to Video
+
+### Small
+
+ffmpeg -i Greeting.%03d.png -vcodec mjpeg -qscale 1 greeting_small.avi
+
+### Large
+
+ffmpeg -i Greeting.%03d.png -codec copy greeting_large.avi
