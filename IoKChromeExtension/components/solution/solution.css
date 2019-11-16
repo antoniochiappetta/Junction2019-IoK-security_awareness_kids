@@ -1,51 +1,64 @@
-.title {
-    color: blue;
-    background-color: white;
-    padding: 20pt;
-    font-size: 60pt;
-    font-family: verdana;
+.container-fluid {
+    height: 100vh;
 }
 
-.row1 {
-    height: 80%;
+.header-row {
+    height: 15%;
 }
 
-.row2 {
+.top-row {
+    height: 65%;
+}
+
+.bottom-row {
     height: 20%;
 }
 
-
-.container-fluid {
+.logo-image {
+    padding: 10pt;
+    height: auto;
     width: 100%;
-    height: 100%;
+    max-height: 100pt;
 }
 
-body {
-    background-color: orange;
+.bubble {
+    position: relative;
+    margin: 20pt;
+    padding: 15pt;
+    border-radius: 15pt;
+    border-color: teal;
+    border-width: 2pt;
+    background-color: whitesmoke;
+    font-family: verdana;
+}
+
+.bubble:after {
+	content: '';
+	position: absolute;
+	bottom: -20pt;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 40pt solid transparent;
+	border-top-color:whitesmoke;
+	border-bottom: 0;
+	border-right: 0;
+	margin-left: 80pt;
+	margin-bottom: -18pt;
+}
+
+.bubble-heading {
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.bubble-description {
+    font-size: 12pt;
+    font-weight: normal;
 }
 
 .flex-rectangle {
     height: 25%;
     background: #702A1F;
     border-radius: 10px;
-}
-
-.description {
-    padding-left: 20px;
-    padding-right: 20px;
-    font-size: 20px;
-    font-family: verdana;
-}
-
-.explore_btn {
-    padding-left: 60px;
-    padding-right: 60px;
-    margin-top: 30px;
-    width: 80%;
-    height: 20%;
-    font-size: 40px;
-    background: #3d5b99;
-    font-family: verdana;
-    color: white;
-    border-radius: 20px;
 }

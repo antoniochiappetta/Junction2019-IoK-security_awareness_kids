@@ -5,5 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // The handler also must go in a .js file
 function handler() {
+    localStorage.setItem("active_tab", null);
+    localStorage.setItem("use_case", null);
     store_experience('phishing','wrong')
 }

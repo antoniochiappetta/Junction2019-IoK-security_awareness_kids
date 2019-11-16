@@ -8,7 +8,7 @@ function store_experience(category, answer) {
         key = category + "_wrong";
     }
 
-    const oldValue = parseInt(localStorage.getItem(key) === undefined ? 0 : localStorage.getItem(key));
+    const oldValue = parseInt(localStorage.getItem(key) == null ? 0 : localStorage.getItem(key));
     let value = oldValue + 1;
     if (!oldValue) {
         value = 1
@@ -21,9 +21,9 @@ function store_experience(category, answer) {
     console.log(category);
       const correctKey = category + "_correct";
       const wrongKey = category + "_wrong";
-      const correctValue = localStorage.getItem(correctKey);
-      const wrongValue = localStorage.getItem(wrongKey);
-      const correct = correctValue === null ? 0 : correctValue;
-      const wrong = wrongValue === null ? 0 : wrongValue;
+      const correctValue = parseInt(localStorage.getItem(correctKey));
+      const wrongValue = parseInt(localStorage.getItem(wrongKey));
+      const correct = correctValue == null ? 0 : correctValue;
+      const wrong = wrongValue == null ? 0 : wrongValue;
       return correct / (correct + wrong + 1);
   }
