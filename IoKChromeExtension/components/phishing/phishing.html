@@ -4,20 +4,29 @@
 	<title>Facebook</title>
 	<link rel="stylesheet" href="./phishing.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-</head>
+	</head>
 <body>
+
 	<div class="title">
-		Login to Facebook
+		<img id="img1" src="../../assets/images/facebook.png" /> Facebook Login
 	</div>
+	<br>
+	<br>
+
 	<div class="container">
 		<form class="form" action="../solution/solution.html">
-			<label>Email: </label><input class="form-control" autofocus required>
-			<label>Password: </label><input class="form-control" required>
-			<br/>
-			<input class="form-control btn btn-lg btn-primary" type="submit">
-		</form>		
-		<form class="form" action="../solution/solution.html">
+			<label>Email or Phone: </label><input class="form-control" placeholder="Email" type="mail" name="name" autofocus required>
+			<br>
+			<label>Password: </label><input class="form-control" placeholder="Password" required>
+			<input type="checkbox" />keep me logged in
+			<br>
+			<br>
+			<input class="form-control fb-btn btn-lg btn-primary" id="submit" type="submit" value="Sign In">
+			<br>
+			<br>
+		</form>
+
+		<!--<form class="form" action="../solution/solution.html">
 			<label></label>First Name: </label><input class="form-control" autofocus required>
 			<label>Last Name: </label><input class="form-control" required>
 			<label>Email: </label><input class="form-control" required>
@@ -26,7 +35,7 @@
 			<label>Phone Number: </label><input class="form-control" required>
 			<br/>
 			<input class="form-control btn btn-lg btn-primary" type="submit">
-		</form>
+		</form>-->
 	</div>
 </body>
 </html>

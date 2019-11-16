@@ -1,6 +1,28 @@
 .title {
-    color: blue;
-    background-color: white;
+    color: white;
+    background: #3d5b99;
     padding: 20pt;
-    font-size: 60pt;
+    font-size: 30pt;
+    font-family: verdana;
 }
+
+#submit {
+    height: 2.5em;
+}
+
+.form-control {
+    background: #3d5b99;
+}
+
+#img1{
+    left:50px;
+    height:70px;
+}
+
+.form{
+    font-family: verdana;
+}
+
+
+
+
