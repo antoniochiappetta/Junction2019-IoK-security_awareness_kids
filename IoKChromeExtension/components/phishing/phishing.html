@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Facebook</title>
-	<link rel="stylesheet" href="./phishing.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-</head>
-<body>
-	<div class="title">
-		Login to Facebook
-	</div>
-	<div class="container">
-		<form class="form" action="../solution/solution.html">
-			<label>Email: </label><input class="form-control" autofocus required>
-			<label>Password: </label><input class="form-control" required>
-			<br/>
-			<input class="form-control btn btn-lg btn-primary" type="submit">
-		</form>		
-		<form class="form" action="../solution/solution.html">
-			<label></label>First Name: </label><input class="form-control" autofocus required>
-			<label>Last Name: </label><input class="form-control" required>
-			<label>Email: </label><input class="form-control" required>
-			<label>Password: </label><input class="form-control" required>
-			<label>Address: </label><input class="form-control" required>
-			<label>Phone Number: </label><input class="form-control" required>
-			<br/>
-			<input class="form-control btn btn-lg btn-primary" type="submit">
-		</form>
-	</div>
-</body>
+	<head>
+		<title>Facebook</title>
+		<link rel="stylesheet" href="./phishing.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="title">
+			Login to Facebook
+		</div>
+		<div class="container">
+			<form class="form" action="../solution/solution.html">
+				<input type="hidden" name="category" value="phishing">
+				<input type="hidden" name="answer" value="correct">
+				<label>Email: </label><input class="form-control" autofocus required>
+				<label>Password: </label><input class="form-control" required>
+				<br/>
+				<input class="form-control btn btn-lg btn-primary" type="submit">
+			</form>		
+			<form class="form" action="../solution/solution.html">
+				<label></label>First Name: </label><input class="form-control" autofocus required>
+				<label>Last Name: </label><input class="form-control" required>
+				<label>Email: </label><input class="form-control" required>
+				<label>Password: </label><input class="form-control" required>
+				<label>Address: </label><input class="form-control" required>
+				<label>Phone Number: </label><input class="form-control" required>
+				<br/>
+				<input class="form-control btn btn-lg btn-primary" type="submit">
+			</form>
+		</div>
+	</body>
 </html>
