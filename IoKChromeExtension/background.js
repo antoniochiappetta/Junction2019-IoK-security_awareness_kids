@@ -1,18 +1,28 @@
-// called when the user clicks on the browser action.
-chrome.browserAction.onClicked.addListener(function(tab) {
-    console.log("Browser action, not implemented yet");
+var activeTab = null;
+var use_case = null;
 
-    // send a message to the active tab
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-        var activeTab = tabs[0];
-        chrome.tabs.sendMessage(activeTab.id, {"message": "clicked_browser_action"});
-    });
+chrome.tabs.onRemoved.addListener(function(tabid, removed) {
+
+    console.log("Tab closed:" ,tabid, activeTab);
+    if (tabid===activeTab) {
+        activeTab = null;
+        use_case = null;
+        chrome.tabs.create({ url: chrome.runtime.getURL("./components/solution/solution.html?category=" +use_case+"&answer=correct") }, function(tab) {
+            console.log("Opened: " + tab.url);
+        });
+    }
 });
+
 
 // how to redirect
 chrome.webRequest.onBeforeRequest.addListener(
     function(details) {
+
         if (Math.random() > 0.5) {
+            chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+                activeTab = tabs[0].id;
+                use_case = "ransomware"
+            });
             return {redirectUrl: chrome.runtime.getURL("./components/ransomware/ransomware_redirect.html")};
         }//put here the url you want to redirect the page to
     },
