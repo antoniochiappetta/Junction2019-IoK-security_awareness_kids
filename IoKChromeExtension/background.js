@@ -10,9 +10,28 @@ function get_experience(category) {
     const wrongKey = category + "_wrong";
     const correctValue = localStorage.getItem(correctKey);
     const wrongValue = localStorage.getItem(wrongKey);
-    const correct = correctValue == undefined ? 0 : correctValue;
-    const wrong = wrongValue == undefined ? 0 : wrongValue;
+
+    const correct = correctValue === null ? 0 : correctValue;
+    const wrong = wrongValue === null ? 0 : wrongValue;
+
     return correct / (correct + wrong + 1);
+}
+
+function store_experience(category, answer) {
+    var key = "";
+    if (answer === "correct") {
+        key = category + "_correct";
+    } else {
+        key = category + "_wrong";
+    }
+
+    const oldValue = parseInt(localStorage.getItem(key) === undefined ? 0 : localStorage.getItem(key));
+    let value = oldValue + 1;
+    if (!oldValue) {
+        value = 1
+    }
+    localStorage.setItem(key, value);
+    console.log(localStorage.getItem(key));
 }
 
 // MARK: - Tab closing (correct reaction to tricks)
@@ -21,6 +40,7 @@ chrome.tabs.onRemoved.addListener(function(tabid, removed) {
 
     console.log("Tab closed:" ,tabid, activeTab);
     if (tabid===activeTab) {
+        store_experience(use_case, "correct");
         activeTab = null;
         use_case = null;
         chrome.tabs.create({ url: chrome.runtime.getURL("./components/solution/solution.html?category=" +use_case+"&answer=correct") }, function(tab) {
@@ -71,7 +91,8 @@ chrome.webRequest.onBeforeRequest.addListener(
 chrome.webRequest.onBeforeRequest.addListener(
     function(details) {
         exp_level = get_experience("ransomware");
-        prob_limit = 0.7 // Ensure always no more than 30% probability of being redirected
+        console.log(exp_level);
+        prob_limit = 0.7; // Ensure always no more than 30% probability of being redirected
         if (Math.random() > Math.max(prob_limit, exp_level)) {
             chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
                 activeTab = tabs[0].id;

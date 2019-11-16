@@ -3,6 +3,7 @@
 <head>
     <title>Your computer has been locked</title>
 	<script src="../../utils/experience.js"></script>
+    <script src="ransomware_redirect.js"></script>
     <link rel="stylesheet" href="ransomware_redirect.css">
 </head>
 <body>
@@ -37,7 +38,8 @@
             <form class="input" action="../solution/solution.html">
                 <input type="hidden" name="category" value="ransomware">
                 <input type="hidden" name="answer" value="wrong">
-                <button id="pay_button" onclick="store_experience('ransomware','wrong')">Unlock computer</button>
+                <button id="pay_button">Unlock computer</button>
+                </form>
             </div>
             <div class="methods">
                 <img src="../../assets/images/fake-hacked-computer.png" alt="fake hacked computer"> <img src="../../assets/images/files-encrypted-prank.png" alt="files encrypted online prank"> <img src="../../assets/images/pay-with-kidneys.png" alt="pay with your kidney">
