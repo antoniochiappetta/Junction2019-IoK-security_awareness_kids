@@ -19,15 +19,6 @@ var params = function() {
     return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
 }();
 
-var games = {
-    "phishing": [
-        "PasswordCreationTutorial" // put URL here
-    ],
-    "ransomware": [
-        // empty
-    ]
-}
-
 const category = params["category"];
 const answer = params["answer"];
 
@@ -76,10 +67,14 @@ switch (category) {
 // Depending on the answer use a different reactionVideo
 
 const reactionVideoURL = answer == "correct" ? "../../assets/animations/success.webm" : "../../assets/animations/failure.webm";
+
+// Depending on the answer show a different reaction color
+
 const result_color = answer == "correct" ? "#7BC943" : "#ED1C24";
 const result_text = answer == "correct" ? "Correct!" : "Wrong!";
+
 window.onload = function() {
-    console.log(reactionVideoURL);
+
     document.getElementById("reactionVideoSource").src = reactionVideoURL;
     document.getElementById("reactionVideo").load();
 
@@ -87,8 +82,7 @@ window.onload = function() {
     console.log(document.getElementById("bubble-heading"));
     document.getElementById("bubble-heading").innerText = title;
     document.getElementById("bubble-description").innerHTML = message;
-    this.document.getElementById("result_div").innerHTML = result_text;
+    document.getElementById("result_div").innerHTML = result_text;
     document.getElementById("result_rect").style.background = result_color;
-};
 
-// Depending on the answer show a different reaction color
+};
