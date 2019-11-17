@@ -3,7 +3,9 @@
   "name": "Junction19 Extension",
   "version": "0.1",
   "background": {
-    "scripts": ["background.js"]
+    "scripts": [
+      "background.js"
+    ]
   },
   "permissions": [
     "webRequest",
@@ -12,9 +14,16 @@
   ],
   "content_scripts": [
     {
-      "matches": ["*://www.facebook.com/*"],
-      "js": ["jquery-3.4.1.min.js", "./components/fb_fake_request/fb_fake_request.js"],
-      "css": ["./components/fb_fake_request/fb_fake_request.css"]
+      "matches": [
+        "*://www.facebook.com/*"
+      ],
+      "js": [
+        "jquery-3.4.1.min.js",
+        "./components/fb_fake_request/fb_fake_request.js"
+      ],
+      "css": [
+        "./components/fb_fake_request/fb_fake_request.css"
+      ]
     }
   ],
   "browser_action": {
