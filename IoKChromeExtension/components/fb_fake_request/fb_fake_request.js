@@ -33,8 +33,7 @@ function store_experience(category, answer) {
 exp_level = get_experience("fb_fake_request");
 console.log("fb_fake_request exp:", exp_level);
 prob_limit = 0.7; // Ensure always no more than 30% probability of being redirected
-// if (Math.random() > Math.max(prob_limit, exp_level)) {
-if (1) {
+    if (Math.random() > Math.max(prob_limit, exp_level)) {
     $(document).ready(function () {
         var el = document.getElementsByClassName('_4962')[0];
         var newEl = document.createElement('button');
