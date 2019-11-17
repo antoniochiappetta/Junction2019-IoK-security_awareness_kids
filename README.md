@@ -15,3 +15,11 @@ While browsing, the main threats that kids may encounter are ransomware, suspici
 The child is then redirected to a page in which he is given the result relative to the actions he took. He will be delicately warned about the possible dangers he might have faced and provided with some advice on how to avoid unpleasant situations. Afterwards, he also has the possibility to play a minigame which allows practicing some skills such as remembering slightly more complex passwords. Also, the fake threat could be presented more often in case the kid is weak at tackling those occurrences. The difficulty of these games could be increased depending upon the age of the user.
 Moreover, in order to make the interface more appealing for the children, an avatar called IoKid (see Figure []) is used to interact with him, providing guidelines during the minigames and while surfing the web.
 Thanks to these features, the plug-in reliefs the parents from the heavy and stressful duty to explain and monitor the online usage of their kids, especially if they are not confident and familiar with the Internet environment. In addition to this, the add-on will provide parents with easy to interpret statistics of the history and online security level of the child. From the parents' dashboard is eventually possible to easily blacklist different pre-sets of websites and possibly add others when desired.
+
+### Instruction for installation
+
+- Download the repo as a zip package
+- Open Google Chrome and navigate to Settings/Extensions
+- Activate Developer Mode on the upper right corner
+- Click on Load Unpacked
+- Navigate your file system and link the folder IoKChromeExtension
