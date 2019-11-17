@@ -74,7 +74,7 @@ window.onload = function() {
     document.getElementById("bubble-heading").innerText = category;
     document.getElementById("bubble-description").innerHTML = message;
     this.document.getElementById("result_div").innerHTML = result_text;
-    document.getElementById("result_rect").style.background = rect_color;
+    document.getElementById("result_rect").style.background = result_color;
 };
 
 // Depending on the answer show a different reaction color
