@@ -25,7 +25,12 @@
 
 			</div>
 
+			<!-- MARK: - Top row-->
+
 			<div class="row top-row">
+
+				<!-- MARK: - Suggestion -->
+
 				<div class="col-md-6">
 					<div class="bubble">
 						<div id="bubble-heading" class="bubble-heading">
@@ -37,33 +42,47 @@
 
 				</div>
 
+				<!-- MARK: - Task solution-->
 
+				<div class="col-md-6">
 
-				<div class="col-md-6" style="background-color:orange;">
+					<div class="container-solution" id="result_rect">
+						<div class="solution-div" id="result_div">
+							Correct!
+						</div>
+					</div>
 
-					<br>
-					<div class="container">
-						<video id="reactionVideo" width="672" height="378" autoplay loop>
+				</div>
+
+			</div>
+
+			<!-- MARK: - Bottom row -->
+
+			<div class="row bottom-row">
+
+				<!-- MARK: - Mini game-->
+
+				<div class="col-md-6 container-vertical-align">
+
+					<button class="mini-game-button">
+							Find out more
+					</button>
+
+				</div>
+
+				<!-- MARK: - IoKid animation -->
+
+				<div class="col-md-6 video-col">
+					
+					<div class="video-wrapper">
+						<video class="iokid-animation" id="reactionVideo" autoplay loop>
 							<source id="reactionVideoSource" src="" type="video/webm">
 							Your browser does not support the video tag.
 						</video>
 					</div>
 
 				</div>
-			</div>
 
-			<div class="row bottom-row">
-				<div class="col-md-6" style="background-color:yellow;">
-
-					<button > Find out more</button>
-				</div>
-
-
-
-				<div class="col-md-6" style="background-color:orange;">
-
-					<div class="flex-rectangle" id="result_rect">Correct!</div>
-				</div>
 			</div>
 
 		</div>

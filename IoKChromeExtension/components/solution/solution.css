@@ -1,5 +1,6 @@
 .container-fluid {
     height: 100vh;
+    padding: 0 !important;
 }
 
 .header-row {
@@ -57,8 +58,63 @@
     font-weight: normal;
 }
 
-.flex-rectangle {
-    height: 25%;
-    background: #702A1F;
-    border-radius: 10px;
+.video-col {
+    display: flex;
+    align-items: flex-end;
+}
+
+.video-wrapper {
+    height: 70pt;
+    margin-right: 20pt;
+    margin-left: 20pt;
+    margin-bottom: 40pt;
+    border-radius: 50%;
+    background-color: #fbb03b;
+}
+
+.iokid-animation {
+    position: relative;
+    top: 75%;
+    transform: translateY(-100%);
+    width: 100%;
+    min-height: 200pt;
+}
+
+.container-vertical-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mini-game-button {
+    border-radius: 15pt;
+    background-color: #3fa9f5;
+    color: white;
+    font-family: verdana;
+    font-size: 16pt;
+    font-weight: bold;
+    width: 70%;
+    height: 50%;
+}
+
+.container-solution {
+    display: flex;
+    align-items: center;
+    height: 80pt;
+    width: 100%;
+    border-top-left-radius: 15pt;
+    border-bottom-left-radius: 15pt;
+    background-color: green;
+    padding: 0;
+    margin-top: 20pt;
+}
+
+.solution-div {
+    width: 100%;
+    text-align: right;
+    padding-right: 20pt;
+    color: white;
+    font-family: verdana;
+    font-size: 32pt;
+    font-weight: lighter;
 }
