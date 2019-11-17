@@ -42,7 +42,6 @@ chrome.tabs.onRemoved.addListener(function(tabid, removed) {
     if (tabid===activeTab) {
         store_experience(use_case, "correct");
         activeTab = null;
-        use_case = null;
         chrome.tabs.create({ url: chrome.runtime.getURL("./components/solution/solution.html?category=" +use_case+"&answer=correct") }, function(tab) {
             console.log("Opened: " + tab.url);
         });
@@ -99,7 +98,7 @@ chrome.webRequest.onBeforeRequest.addListener(
             });
             // return {redirectUrl: chrome.extension.getURL("./components/phishing/phishing.html")};
             body = document.getElementsByTagName('body');
-            
+
         }
     },
     {
