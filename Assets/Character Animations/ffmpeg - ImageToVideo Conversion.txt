@@ -2,8 +2,8 @@
 
 ### Small
 
-ffmpeg -i Greeting.%03d.png -vcodec mjpeg -qscale 1 greeting_small.avi
+ffmpeg -i Greeting.%03d.png -vcodec mjpeg -qscale 1 greeting_small.mp4
 
 ### Large
 
-ffmpeg -i Greeting.%03d.png -codec copy greeting_large.avi
+ffmpeg -i Greeting.%03d.png -codec copy greeting_large.mp4
