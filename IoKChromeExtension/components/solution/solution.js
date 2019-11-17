@@ -38,7 +38,7 @@ switch (category) {
     case "phishing":
         message = "Phishing is a way that criminals get sensitive information (like usernames or passwords). It is a method of social engineering. Very often, phishing is done by electronic mail. This mail appears to come from a bank or other service provider. It usually says that because of some change in the system, the users need to re-enter their usernames/passwords to confirm them. The emails usually have a link to a page that looks almost like that of the real bank.<br>"+
             "<br><br> Password are very very sensible information. It's important to never intentionally reveal them, but also having a good and secure password is fundamental to avoid malicious attempts to guess it."+
-            "<br>Click on the button below to learn more about secure passwords!;
+            "<br>Click on the button below to learn more about secure passwords!";
         break;
     case "ransomware":
         message = "Ransomware can infect your machine if you accidentally pick up malware from a website or download!<br>" +
